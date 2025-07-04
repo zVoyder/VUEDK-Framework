@@ -21,9 +21,15 @@ protected:
 	
 	virtual void OnInit_Implementation() override;
 
+	/**
+	 * Called when the weapon attack is successful.
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	void OnWeaponAttackSuccess();
-	
+
+	/**
+	 * Called when the weapon attack fails.
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	void OnWeaponAttackFailed();
 };

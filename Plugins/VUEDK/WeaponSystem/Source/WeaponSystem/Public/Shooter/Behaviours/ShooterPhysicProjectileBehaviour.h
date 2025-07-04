@@ -37,6 +37,10 @@ public:
 
 	virtual void Init(UShooter* InShooter, const FShootData InShootData, UShootBarrel* InShootBarrel) override;
 
+	/**
+	 * Sets the pool of projectiles to be used by this shooter behaviour.
+	 * @param InProjectilesPoolTag - The tag of the projectiles pool to set.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void SetProjectilesPool(const FGameplayTag InProjectilesPoolTag);
 
@@ -46,5 +50,10 @@ protected:
 	virtual bool Check() const override;
 
 private:
+	/**
+	 * Spawns a projectile at the specified shoot point and direction.
+	 * @param ShootPoint - The shoot point from which the projectile will be spawned.
+	 * @param DirectionToTarget - The direction in which the projectile will be fired.
+	 */
 	void SpawnProjectile(const UShootPoint* ShootPoint, const FVector& DirectionToTarget) const;
 };

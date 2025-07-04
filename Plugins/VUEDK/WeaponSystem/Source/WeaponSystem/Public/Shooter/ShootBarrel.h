@@ -14,7 +14,11 @@ class WEAPONSYSTEM_API UShootBarrel : public USceneComponent
 
 public:
 	UShootBarrel();
-	
+
+	/**
+	 * Gets the shoot points children of this shoot barrel.
+	 * @return An array of shoot points that are children of this shoot barrel.
+	 */
 	UFUNCTION(BlueprintPure)
 	TArray<UShootPoint*> GetShootPointsChildren() const;
 };

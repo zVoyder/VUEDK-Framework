@@ -30,6 +30,10 @@ public:
 	
 	virtual void ResetTask() override;
 	
+	/**
+	 * Gets the current progress count for this task.
+	 * @return The current count value.
+	 */
 	UFUNCTION(BlueprintPure)
 	int32 GetCurrentCount() const;
 };

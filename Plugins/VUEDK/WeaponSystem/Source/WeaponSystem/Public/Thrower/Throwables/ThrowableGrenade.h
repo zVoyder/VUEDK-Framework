@@ -25,13 +25,19 @@ public:
 
 public:
 	AThrowableGrenade();
-	
+
+	/**
+	 * Makes the grenade explode immediately, dealing damage to actors within the explosion radius.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void Explode();
 
 protected:
 	virtual void OnThrowableLifeSpanEnd_Implementation() override;
 
+	/**
+	 * Called when the grenade explodes.
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	void OnExplosion();
 };

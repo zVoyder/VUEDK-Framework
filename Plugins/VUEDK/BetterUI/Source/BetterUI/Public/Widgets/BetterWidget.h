@@ -44,37 +44,83 @@ private:
 public:
 	virtual void NativeConstruct() override;
 	
+	/**
+	 * @brief Returns the widget that should receive focus.
+	 * @return The widget to focus.
+	 */
 	virtual UWidget* GetWidgetFocusTarget_Implementation() override;
 
+	/**
+	 * @brief Returns the widget that should lose focus.
+	 * @return The widget to unfocus.
+	 */
 	virtual UWidget* GetWidgetUnfocusTarget_Implementation() override;
 
+	/**
+	 * @brief Selects the widget natively, optionally calling events.
+	 * @param bCallEvents If true, selection events will be called.
+	 */
 	virtual void NativeSelectWidget(const bool bCallEvents = true) override;
 
+	/**
+	 * @brief Deselects the widget natively, optionally calling events.
+	 * @param bCallEvents If true, deselection events will be called.
+	 */
 	virtual void NativeDeselectWidget(const bool bCallEvents = true) override;
 	
+	/**
+	 * @brief Selects the widget (Blueprint event).
+	 */
 	virtual void SelectWidget_Implementation() override;
 
+	/**
+	 * @brief Deselects the widget (Blueprint event).
+	 */
 	virtual void DeselectWidget_Implementation() override;
 
+	/**
+	 * @brief Returns true if the widget is currently selected.
+	 * @return True if selected, false otherwise.
+	 */
 	UFUNCTION(BlueprintPure)
 	bool IsBetterWidgetSelected() const;
 
+	/**
+	 * @brief Sets focus to the desired widget.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void SetFocusDesiredWidget();
 
+	/**
+	 * @brief Removes focus from the widget.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void Unfocus();
 	
 protected:
+	/**
+	 * @brief Called when the widget is selected (Blueprint event).
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	void OnSelectWidget();
 
+	/**
+	 * @brief Called when the widget is deselected (Blueprint event).
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	void OnDeselectWidget();
 	
+	/**
+	 * @brief Returns true if the widget can be focused.
+	 * @return True if can be focused, false otherwise.
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	bool CanFocus() const;
 
+	/**
+	 * @brief Returns true if the widget can be unfocused.
+	 * @return True if can be unfocused, false otherwise.
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	bool CanUnfocus() const;
 

@@ -42,8 +42,15 @@ protected:
 	virtual void OnSettingsApplied() override;
 	
 private:
+	/**
+	 * Sets the scalar value based on the gameplay tags.
+	 */
 	UFUNCTION()
 	void SetScalarValue();
 
+	/**
+	 * Applies the scalar to the current value.
+	 * @param CurrentValue The current input value to modify.
+	 */
 	void ApplyScale(FInputActionValue& CurrentValue) const;
 };

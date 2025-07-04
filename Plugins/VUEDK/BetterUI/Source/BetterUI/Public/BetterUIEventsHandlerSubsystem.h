@@ -38,15 +38,27 @@ public:
 	FRequestLeftSelect OnRequestLeftSelect;
 
 public:
+	/**
+	 * @brief Triggers the back request event.
+	 */
 	UFUNCTION(BlueprintCallable, Category = "Better UI|Events")
 	void RequestBack() const;
 	
+	/**
+	 * @brief Triggers the confirm request event.
+	 */
 	UFUNCTION(BlueprintCallable, Category = "Better UI|Events")
 	void RequestConfirm() const;
 	
+	/**
+	 * @brief Triggers the right select request event.
+	 */
 	UFUNCTION(BlueprintCallable, Category = "Better UI|Events")
 	void RequestRightSelect() const;
-	
+
+	/**
+	 * @brief Triggers the left select request event.
+	 */
 	UFUNCTION(BlueprintCallable, Category = "Better UI|Events")
 	void RequestLeftSelect() const;
 };

@@ -33,11 +33,18 @@ private:
 
 protected:
 	virtual void Init() override;
-	
+
 	virtual FInputActionValue ModifyRaw_Implementation(const UEnhancedPlayerInput* PlayerInput, FInputActionValue CurrentValue, float DeltaTime) override;
-	
+
+	/**
+	 * Applies the negation to the current value.
+	 * @param CurrentValue The current input value to modify.
+	 */
 	void ApplyNegate(FInputActionValue& CurrentValue) const;
 
 private:
+	/**
+	 * Sets the negation values based on the gameplay tags.
+	 */
 	void SetNegateValues();
 };

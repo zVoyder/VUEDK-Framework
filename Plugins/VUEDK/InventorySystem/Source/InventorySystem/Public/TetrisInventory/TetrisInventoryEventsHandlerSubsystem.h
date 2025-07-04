@@ -66,32 +66,65 @@ private:
 	bool bIsSplitting = false;
 
 public:
+	/**
+	 * Called when the player controller changes.
+	 * @param NewPlayerController The new player controller.
+	 */
 	virtual void PlayerControllerChanged(APlayerController* NewPlayerController) override;
 	
+	/**
+	 * Requests to start dragging an item (e.g., for UI drag-and-drop).
+	 */
 	UFUNCTION(BlueprintCallable)
 	void RequestDrag() const;
 
+	/**
+	 * Requests to drop the currently dragged item.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void RequestDrop() const;
 
+	/**
+	 * Requests to rotate the currently dragged item.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void RequestRotate() const;
 
+	/**
+	 * Requests to equip or unequip the currently selected item.
+	 * @param SwapPriority The priority for swapping (default: 0).
+	 */
 	UFUNCTION(BlueprintCallable)
 	void RequestEquipUnequip(const int32 SwapPriority = 0) const;
 
+	/**
+	 * Requests to transfer the currently selected item to the target inventory.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void RequestTransferItemToTargetInventory() const;
 
+	/**
+	 * Requests to discard the currently selected item.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void RequestDiscard() const;
 
+	/**
+	 * Requests to split the currently selected item stack.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void RequestSplit();
 
+	/**
+	 * Requests to cancel the current split operation.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void RequestCancelSplit();
 
+	/**
+	 * Checks if the system is currently in split mode.
+	 * @return True if splitting, false otherwise.
+	 */
 	UFUNCTION(BlueprintPure)
 	bool IsSplitting() const;
 };

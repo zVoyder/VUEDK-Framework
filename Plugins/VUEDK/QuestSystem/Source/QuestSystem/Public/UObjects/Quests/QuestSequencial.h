@@ -28,10 +28,19 @@ public:
 	virtual void ResetQuest() override;
 	
 	virtual FQuestSaveData CreateQuestSaveData() const override;
-	
+
+	/**
+	 * Achieves all tasks in the quest sequentially.
+	 * @return True if all tasks were achieved, false otherwise.
+	 */
 	UFUNCTION(BlueprintPure)
 	int32 GetCurrentTaskIndex() const;
 
+	/**
+	 * Gets the next task in the sequence.
+	 * @param TaskDataKey - The task to check.
+	 * @return Pointer to the next task if available, nullptr otherwise.
+	 */
 	UFUNCTION(BlueprintPure)
 	int32 GetTaskIndex(UTaskData* TaskDataKey) const;
 };

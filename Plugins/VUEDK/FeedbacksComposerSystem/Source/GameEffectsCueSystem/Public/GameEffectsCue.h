@@ -48,29 +48,58 @@ private:
 	int32 CurrentIndex = 0;
 
 public:
+	/**
+	 * Initializes the cue with the given instigator.
+	 * @param Instigator The actor that instigates the cue.
+	 */
 	void Init(AActor* Instigator);
 
+	/**
+	 * Starts the cue sequence.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void StartCue();
 
+	/**
+	 * Stops the cue sequence.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void StopCue();
 
+	/**
+	 * Resumes the cue sequence from the current effect.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void ResumeCue();
 
+	/**
+	 * Interrupts the cue sequence immediately.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void InterruptCue();
 
+	/**
+	 * Advances to the next effect in the sequence.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void NextEffect();
 
+	/**
+	 * Goes back to the previous effect in the sequence.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void PreviousEffect();
 
+	/**
+	 * Plays the effect at the specified index.
+	 * @param Index The index of the effect to play.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void PlayEffectAtIndex(const int32 Index);
 
 protected:
+	/**
+	 * Finishes the cue sequence and triggers the OnCueFinished event.
+	 */
 	void FinishCue();
 };

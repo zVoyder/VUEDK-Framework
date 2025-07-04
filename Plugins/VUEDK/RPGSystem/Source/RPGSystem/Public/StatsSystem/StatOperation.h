@@ -18,8 +18,17 @@ protected:
 	float ModifierValue;
 	
 public:
+	/**
+	 * Initializes the stat operation with the given payload and modifier value.
+	 * @param InPayload The payload object for initialization.
+	 * @param InModifierValue The modifier value to apply.
+	 */
 	void Init(UObject* InPayload, const float InModifierValue);
-	
+
+	/**
+	 * Gets the payload associated with this operation.
+	 * @return Pointer to the payload object, or nullptr if not set.
+	 */
 	UFUNCTION(BlueprintNativeEvent, BlueprintPure)
 	float GetResultOperation() const;
 

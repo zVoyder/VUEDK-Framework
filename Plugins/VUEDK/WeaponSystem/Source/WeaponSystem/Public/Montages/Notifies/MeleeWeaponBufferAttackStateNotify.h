@@ -23,7 +23,15 @@ protected:
 	virtual void OnWeaponNotifyTick(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float FrameDeltaTime, const FAnimNotifyEventReference& EventReference, AWeaponBase* Weapon) override;
 	
 private:
+	/**
+	 * Initializes the notify state with the given weapon.
+	 * @param Weapon The weapon to initialize the notify state with.
+	 */
 	void Init(AWeaponBase* Weapon);
 
+	/**
+	 * Checks if the notify state is properly initialized.
+	 * @return True if the notify state is initialized, false otherwise.
+	 */
 	bool Check() const;
 };

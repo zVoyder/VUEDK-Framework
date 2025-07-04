@@ -21,12 +21,24 @@ public:
 
 	void LoadClassicItemSaveData(UInventoryBase* LoadingInventory, const FClassicItemSaveData ItemSaveData);
 
+	/**
+	 * Returns the ClassicItemData associated with this item.
+	 * @return The ClassicItemData object.
+	 */
 	UFUNCTION(BlueprintPure)
 	UClassicItemData* GetClassicItemData() const;
-	
+
+	/**
+	 * Returns the total number of slots required by this item.
+	 * @return The total number of slots required.
+	 */
 	UFUNCTION(BlueprintPure)
 	TArray<FClassicItemSlotData> GetRequiredSlots() const;
 
+	/**
+	 * Returns the total number of slots required by this item.
+	 * @return The total number of slots required.
+	 */
 	UFUNCTION(BlueprintPure)
 	int32 GetMinRequiredSlots() const;
 };

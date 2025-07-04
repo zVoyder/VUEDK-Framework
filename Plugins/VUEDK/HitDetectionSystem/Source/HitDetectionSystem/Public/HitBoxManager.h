@@ -70,6 +70,10 @@ private:
 public:
 	UHitBoxManager();
 
+	/**
+	 * Checks if the hit box manager uses per-bone hit boxes.
+	 * @return True if per-bone hit boxes are used, false otherwise.
+	 */
 	UFUNCTION(BlueprintPure, Category = "HitBox")
 	bool HasHitBoxPerBones() const;
 
@@ -80,15 +84,34 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
+	/**
+	 * Checks if the component can currently receive damage.
+	 * @return True if it can receive damage, false otherwise.
+	 */
 	bool CanReceiveDamage() const;
 	
 private:
+	/**
+	 * Calculates the damage after applying the bone multiplier.
+	 * @param BoneName The name of the bone hit.
+	 * @param BaseDamage The base damage value.
+	 * @return The multiplied damage value.
+	 */
 	float CalculateMultipliedDamage(const FName& BoneName, const float& BaseDamage) const;
 	
+	/**
+	 * Registers all hit zones for this manager.
+	 */
 	void RegisterHitZones();
 	
+	/**
+	 * Starts the cooldown period for receiving damage.
+	 */
 	void StartReceiveDamageCooldown();
-
+	
+	/**
+	 * Ends the cooldown period for receiving damage.
+	 */
 	void EndReceiveDamageCooldown();
 
 	UFUNCTION()

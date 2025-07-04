@@ -42,32 +42,65 @@ private:
 
 public:
 	explicit UMenuWidget(const FObjectInitializer& ObjectInitializer);
-
+	
 	virtual void NativeConstruct() override;
 
+	/**
+	 * @brief Initializes the menu widget with the specified menu manager.
+	 * @param InMenuManager The menu manager to associate with this widget.
+	 */
 	void Init(UMenuManager* InMenuManager);
 
+	/**
+	 * @brief Opens the menu natively (internal logic).
+	 */
 	void NativeOpen();
 
+	/**
+	 * @brief Closes the menu natively (internal logic).
+	 */
 	void NativeClose();
 
+	/**
+	 * @brief Closes the menu (Blueprint callable).
+	 */
 	UFUNCTION(BlueprintCallable)
 	void Close();
 
+	/**
+	 * @brief Returns true if the menu is currently open.
+	 * @return True if open, false otherwise.
+	 */
 	UFUNCTION(BlueprintPure)
 	bool IsOpen() const;
 
 protected:
+	/**
+	 * @brief Called when the menu is opened (Blueprint event).
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	void OnOpen();
 
+	/**
+	 * @brief Called when the menu is closed (Blueprint event).
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	void OnClose();
 
 private:
+	/**
+	 * @brief Sets the menu's visibility to open state.
+	 */
 	void SetOpenVisibility();
 
+	/**
+	 * @brief Sets the menu's visibility to closed state.
+	 */
 	void SetCloseVisibility();
 
+	/**
+	 * @brief Checks the internal state of the menu widget.
+	 * @return True if the state is valid, false otherwise.
+	 */
 	bool Check() const;
 };

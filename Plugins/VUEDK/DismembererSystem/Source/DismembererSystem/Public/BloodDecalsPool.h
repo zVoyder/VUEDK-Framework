@@ -23,27 +23,65 @@ private:
 
 public:
 	void Initialize(FSubsystemCollectionBase& Collection) override;
-
+	
 	virtual void OnWorldBeginPlay(UWorld& InWorld) override;
 	
+	/**
+	 * Destroys all decals in the pool and cleans up resources.
+	 */
 	void DestroyPool();
 	
+	/**
+	 * Acquires a blood decal from the pool.
+	 * @return Pointer to the acquired ABloodDecal, or nullptr if none available.
+	 */
 	ABloodDecal* AcquireDecal();
 	
+	/**
+	 * Releases a blood decal back to the pool.
+	 * @param InActor The decal actor to release.
+	 */
 	void ReleaseDecal(ABloodDecal* InActor);
 
 private:
+	/**
+	 * Spawns all decal instances for the pool.
+	 */
 	void SpawnInstances();
 
+	/**
+	 * Spawns a single decal instance and adds it to the pool.
+	 */
 	void SpawnInstance();
 
+	/**
+	 * Pushes a decal actor onto the available pool stack.
+	 * @param Actor The decal actor to push.
+	 */
 	void PushDecal(ABloodDecal* Actor);
 
+	/**
+	 * Pops a decal actor from the available pool stack.
+	 * @return Pointer to the popped ABloodDecal, or nullptr if pool is empty.
+	 */
 	ABloodDecal* PopDecal();
 
+	/**
+	 * Checks if the pool of available decals is empty.
+	 * @return True if empty, false otherwise.
+	 */
 	bool IsEmpty() const;
 
+	/**
+	 * Enables or disables a decal actor.
+	 * @param Actor The decal actor to modify.
+	 * @param bIsEnabled Whether to enable or disable the actor.
+	 */
 	void SetDecalEnabled(ABloodDecal* Actor, bool bIsEnabled) const;
 
+	/**
+	 * Clears and resets a decal actor.
+	 * @param Actor The decal actor to clear.
+	 */
 	static void ClearDecal(ABloodDecal* Actor);
 };

@@ -17,6 +17,9 @@ class BETTERUI_API IBetterSwitcherObject
 	GENERATED_BODY()
 
 public:
+	/**
+	 * @brief Called when the switcher activates this widget.
+	 */
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void SwitcherActivatedWidget();
 };

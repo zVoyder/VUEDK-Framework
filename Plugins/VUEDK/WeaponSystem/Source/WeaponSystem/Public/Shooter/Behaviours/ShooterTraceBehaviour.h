@@ -46,11 +46,34 @@ protected:
 	void OnShootTrace(UShootBarrel* Barrel, const FVector& ShootPointLocation, const FVector& TraceStartLocation, const FVector& EndLocation, const TArray<FHitResult>& TraceHitResults, const TArray<FHitResult>& DamageHitResults) const;
 
 private:
+	/**
+	 * Performs a camera sight trace to determine visibility and potential hit points.
+	 * @param World The world context in which the trace is performed.
+	 * @param ShootPoint The shoot point from which the trace originates.
+	 */
 	void CameraSightTrace(const UWorld* World, const UShootPoint* ShootPoint) const;
 
+	/**
+	 * Performs a shoot point trace to determine visibility and potential hit points.
+	 * @param World The world context in which the trace is performed.
+	 * @param ShootPoint The shoot point from which the trace originates.
+	 */
 	void ShootPointTrace(const UWorld* World, const UShootPoint* ShootPoint) const;
 
+	/**
+	 * Performs a target trace to determine visibility and potential hit points.
+	 * @param World The world context in which the trace is performed.
+	 * @param ShootPointLocation The location of the shoot point from which the trace originates
+	 * @param DirectionToTarget The direction vector towards the target from the shoot point location.
+	 */
 	void TargetTrace(const UWorld* World, const FVector& ShootPointLocation, const FVector& DirectionToTarget) const;
 
+	/**
+	 * Performs a line trace to apply damage to actors hit by the trace.
+	 * @param World The world context in which the trace is performed.
+	 * @param ShootPointLocation The location of the shoot point from which the trace originates
+	 * @param TraceStartPoint The starting point of the trace, typically
+	 * @param TraceEndPoint The end point of the trace, which is usually the target location or the maximum range of the trace.
+	 */
 	void LineTraceDamage(const UWorld* World, const FVector& ShootPointLocation, const FVector& TraceStartPoint, const FVector& TraceEndPoint) const;
 };

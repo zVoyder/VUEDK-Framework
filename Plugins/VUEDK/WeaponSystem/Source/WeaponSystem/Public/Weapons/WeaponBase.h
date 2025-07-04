@@ -240,6 +240,10 @@ public:
 	void StopWeaponMontageWithBlends(const FWeaponMontageData& WeaponMontageData, const FAlphaBlendArgs& WeaponBlendOut, const FAlphaBlendArgs& CharacterBlendOut);
 
 protected:
+	/**
+	 * Checks if the weapon can deploy an attack.
+	 * @return True if the weapon can deploy an attack, false otherwise.
+	 */
 	virtual bool NativeDeployWeaponAttack();
 	
 	/**
@@ -303,14 +307,35 @@ private:
 	 */
 	void PlayMontageWithBlendInternal(UAnimInstance* AnimInstance, FWeaponMontageData& WeaponMontageData, UAnimMontage* Montage, float PlayRate, bool bStopAll, const FAlphaBlendArgs& BlendIn, bool bRegisterPlayingMontage = true);
 
+	/**
+	 * Sets the owner animation instance for the weapon.
+	 */
 	void SetOwnerAnimInstance();
 
+	/**
+	 * Adds a montage to the list of currently playing montages.
+	 * @param Montage - The montage to add.
+	 * @param WeaponMontageData - The montage data associated with the weapon.
+	 */
 	void AddPlayingMontage(UAnimMontage* Montage, const FWeaponMontageData& WeaponMontageData);
 
+	/**
+	 * Removes a montage from the list of currently playing montages.
+	 * @param Montage - The montage to remove.
+	 */
 	void RemovePlayingMontage(const UAnimMontage* Montage);
 
+	/**
+	 * Sets the metadata for a weapon montage.
+	 * @param Montage - The montage to set metadata for.
+	 */
 	void SetWeaponMetaData(UAnimMontage* Montage);
 
+	/**
+	 * Callback function for when a montage ends.
+	 * @param AnimMontage - The montage that ended.
+	 * @param bInterrupted - Whether the montage ended due to interruption.
+	 */
 	UFUNCTION()
 	void OnMontageEnded(UAnimMontage* AnimMontage, bool bInterrupted);
 };

@@ -21,7 +21,7 @@ struct FDismemberableLimbData
 	UNiagaraSystem* LimbExplosionFX;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	float LimbMass;
-	
+
 	FDismemberableLimbData(): bCanExplode(false),
 	                          DamageToExplode(0.f),
 	                          LimbExplosionFX(nullptr),
@@ -43,6 +43,11 @@ struct FDismemberableLimbData
 		return BoneName == Other.BoneName;
 	}
 
+	/**
+	 * Checks if the limb is going to explode based on the damage dealt.
+	 * @param Damage The amount of damage dealt to the limb.
+	 * @return True if the limb is going to explode, false otherwise.
+	 */
 	bool IsGoingToExplode(const float Damage) const
 	{
 		return bCanExplode && Damage > DamageToExplode;
@@ -53,4 +58,3 @@ FORCEINLINE uint32 GetTypeHash(const FDismemberableLimbData& LimbData)
 {
 	return GetTypeHash(LimbData.BoneName);
 }
-

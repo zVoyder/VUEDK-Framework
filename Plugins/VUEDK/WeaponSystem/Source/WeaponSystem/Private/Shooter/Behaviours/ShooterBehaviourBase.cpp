@@ -377,6 +377,10 @@ void UShooterBehaviourBase::TickBehaviour(const float DeltaTime)
 	OnTickBehaviour(DeltaTime);
 }
 
+void UShooterBehaviourBase::OnInit_Implementation()
+{
+}
+
 void UShooterBehaviourBase::OnTickBehaviour_Implementation(const float DeltaTime)
 {
 }
@@ -393,7 +397,7 @@ void UShooterBehaviourBase::OnDeployShoot_Implementation(UShootPoint* ShootPoint
 {
 }
 
-void UShooterBehaviourBase::OnInit_Implementation()
+void UShooterBehaviourBase::OnShootSuccess_Implementation(const UShootBarrel* OutShootBarrel)
 {
 }
 
@@ -401,7 +405,17 @@ void UShooterBehaviourBase::OnShootFail_Implementation(const EShootFailReason Fa
 {
 }
 
+bool UShooterBehaviourBase::OnShootCondition_Implementation(UShootBarrel* OutShootBarrel) const
+{
+	return true;
+}
+
 void UShooterBehaviourBase::OnRefill_Implementation()
+{
+}
+
+
+void UShooterBehaviourBase::OnMagEmptied_Implementation()
 {
 }
 
@@ -412,19 +426,6 @@ FVector UShooterBehaviourBase::GetShooterTargetLocation_Implementation() const
 		return CameraHitPoint;
 
 	return FVector::ZeroVector;
-}
-
-void UShooterBehaviourBase::OnShootSuccess_Implementation(const UShootBarrel* OutShootBarrel)
-{
-}
-
-bool UShooterBehaviourBase::OnShootCondition_Implementation(UShootBarrel* OutShootBarrel) const
-{
-	return true;
-}
-
-void UShooterBehaviourBase::OnMagEmptied_Implementation()
-{
 }
 
 bool UShooterBehaviourBase::TryGetCameraPoints(FVector& OutStartPoint, FVector& OutEndPoint, FVector& OutHitPoint, FRotator& OutRotation, const FVector StartPointOffset) const

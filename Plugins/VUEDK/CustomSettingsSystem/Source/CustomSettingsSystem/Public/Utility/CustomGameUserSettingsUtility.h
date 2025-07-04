@@ -16,9 +16,17 @@ private:
 	static UCustomGameUserSettings* UserSettings;
 
 public:
+	/**
+	 * Get the custom game user settings instance.
+	 * @return The custom game user settings instance, or nullptr if it is not initialized.
+	 */
 	UFUNCTION(BlueprintCallable, Category = Settings)
 	static UCustomGameUserSettings* GetCustomUserSettings();
 
 private:
+	/**
+	 * Initialize the custom game user settings instance.
+	 * @return True if the instance was successfully initialized, false otherwise.
+	 */
 	static bool Check();
 };

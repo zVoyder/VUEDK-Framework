@@ -18,9 +18,19 @@ class BETTERUI_API IBetterFocusableWidget
 	GENERATED_BODY()
 	
 public:
+	/**
+	 * @brief Returns the widget that should receive focus.
+	 * @return The widget to focus.
+	 */
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	UWidget* GetWidgetFocusTarget();
 
+	/**
+	 * @brief Returns the widget that should lose focus.
+	 * @return The widget to unfocus.
+	 */
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	UWidget* GetWidgetUnfocusTarget();
 };
+
+

@@ -41,6 +41,10 @@ public:
 
 	virtual FText GetItemDescription() const override;
 
+	/**
+	 * Gets the RPGItemData associated with this item.
+	 * @return Pointer to the URPGItemData.
+	 */
 	UFUNCTION(BlueprintPure)
 	URPGItemData* GetRPGItemData() const;
 
@@ -49,6 +53,9 @@ public:
 protected:
 	virtual void SetItemMeshToLoad() override;
 
+	/**
+	 * Called after the item has been generated.
+	 */
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnPostGeneration();
 };

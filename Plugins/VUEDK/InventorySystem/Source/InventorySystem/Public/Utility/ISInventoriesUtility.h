@@ -49,15 +49,33 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Tetris Inventory System")
 	static UInventoryBase* GetMainInventory();
 
+	/**
+	 * @brief Gets the inventories manager, which is the main class that manages all inventories in the system.
+	 * @return The inventories manager.
+	 */
 	UFUNCTION(BlueprintPure, Category = "Tetris Inventory System")
 	static UInventoriesManager* GetInventoriesManager();
 
+	/**
+	 * @brief Gets the items registry, which is a collection of all item data available in the system.
+	 * @return The items registry.
+	 */
 	UFUNCTION(BlueprintPure, Category = "Tetris Inventory System")
 	static UItemsRegistry* GetRegistry();
 
+	/**
+	 * @brief Checks if the item data is registered in the items registry.
+	 * @param ItemData The item data to check.
+	 * @return True if the item data is registered, false otherwise.
+	 */
 	UFUNCTION(BlueprintPure, Category = "Tetris Inventory System")
 	static bool IsItemInRegistry(const UItemDataBase* ItemData);
 
+	/**
+	 * @brief Checks if the item data is registered in the items registry.
+	 * @param ItemDataID The ID of the item data to check.
+	 * @return True if the item data is registered, false otherwise.
+	 */
 	UFUNCTION(BlueprintPure, Category = "Tetris Inventory System")
 	static UItemDataBase* GetItemDataFromRegistry(const FGuid& ItemDataID);
 
@@ -70,5 +88,9 @@ public:
 	static bool DropItemWithOperation(UItemBase* Item);
 	
 private:
+	/**
+	 * @brief Checks if the inventories system is initialized and ready to use.
+	 * @return True if the system is initialized, false otherwise.
+	 */
 	static bool Check();
 };

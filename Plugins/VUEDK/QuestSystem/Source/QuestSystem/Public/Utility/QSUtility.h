@@ -16,6 +16,10 @@ private:
 	static UQuestManager* CurrentQuestManager;
 	
 public:
+	/**
+	 * Initializes the Quest System with the given QuestManager.
+	 * @param QuestManager The QuestManager to initialize with.
+	 */
 	static void Init(UQuestManager* QuestManager);
 	
 	/**

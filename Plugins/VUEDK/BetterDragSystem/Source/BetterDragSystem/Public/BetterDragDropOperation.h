@@ -6,6 +6,7 @@
 #include "Widgets/BetterDropReceiverWidget.h"
 #include "BetterDragDropOperation.generated.h"
 
+
 UCLASS(Blueprintable, BlueprintType)
 class BETTERDRAGSYSTEM_API UBetterDragDropOperation : public UObject, public FTickableGameObject
 {
@@ -21,7 +22,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	APlayerController* PlayerController;
 	UPROPERTY(BlueprintReadOnly)
-   	UUserWidget* DropReceiver;
+    UUserWidget* DropReceiver;
 	
 private:
 	ESlateVisibility OwnerWidgetVisibility;
@@ -34,20 +35,54 @@ private:
 public:
 	UBetterDragDropOperation();
 	
+	/**
+	 * @brief Initializes the drag and drop operation with the specified parameters.
+	 * @param InOwnerWidget The widget that owns the drag operation.
+	 * @param InDragVisual The visual widget to display during the drag.
+	 * @param InPayload The payload object for the drag operation.
+	 * @param InOwnerWidgetVisibility The visibility to set for the owner widget during the drag.
+	 */
 	void Init(UUserWidget* InOwnerWidget, UUserWidget* InDragVisual, UObject* InPayload, ESlateVisibility InOwnerWidgetVisibility);
 
+	/**
+	 * @brief Sets the keys that can trigger the drop action.
+	 * @param InDropKeys The array of keys for dropping.
+	 */
 	void SetDropKeys(const TArray<FKey>& InDropKeys);
-	
+
+	/**
+	 * @brief Called when the drag operation enters a drop receiver widget.
+	 * @param InDropReceiver The widget that is now the drop receiver.
+	 */
 	void EnterReceiver(UUserWidget* InDropReceiver);
 
+	/**
+	 * @brief Called when the drag operation leaves a drop receiver widget.
+	 */
 	void LeaveReceiver();
-	
+
+	/**
+	 * @brief Updates the drag operation every frame.
+	 * @param DeltaTime The time elapsed since the last tick.
+	 */
 	virtual void Tick(float DeltaTime) override;
 
+	/**
+	 * @brief Checks if the drag operation is tickable.
+	 * @return True if tickable, false otherwise.
+	 */
 	virtual bool IsTickable() const override;
 
+	/**
+	 * @brief Gets the stat ID for this tickable object.
+	 * @return The stat ID.
+	 */
 	virtual TStatId GetStatId() const override;
-
+	
+	/**
+	 * @brief Checks if the drag operation should end.
+	 * @return True if the drag should end, false otherwise.
+	 */
 	UFUNCTION(BlueprintCallable)
 	bool CheckEndDrag();
 	

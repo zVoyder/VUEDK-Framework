@@ -28,6 +28,11 @@ protected:
 	float CalculateLifeSpan_Implementation(const float InRange, const float InSpeed) const override;
 	
 	virtual void OnProjectileHit_Implementation(const FHitResult& ImpactResult, const FVector& ImpactVelocity) override;
-	
+
+	/**
+	 * Checks if the projectile can explode on the given actor.
+	 * @param Actor The actor to check against.
+	 * @return True if the projectile can explode on the actor, false otherwise.
+	 */
 	bool CanExplodeOnActor(const AActor* Actor) const;
 };

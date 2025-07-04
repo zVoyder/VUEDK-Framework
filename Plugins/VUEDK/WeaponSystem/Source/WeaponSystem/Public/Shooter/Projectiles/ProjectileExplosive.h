@@ -19,18 +19,23 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TEnumAsByte<ECollisionChannel> ExplosionChannel = ECC_Visibility;
 
-
 public:
 	AProjectileExplosive();
-	
+
 protected:
+	/*
+	 * Makes the projectile explode, dealing damage to all actors within the explosion radius.
+	 */
 	UFUNCTION(BlueprintCallable)
 	void Explode();
 
 	virtual void OnProjectileHit_Implementation(const FHitResult& ImpactResult, const FVector& ImpactVelocity) override;
-	
+
 	virtual void OnProjectileLifeSpanEnd_Implementation() override;
 
+	/**
+	 * Called when the projectile explodes.
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	void OnExplosion();
 };

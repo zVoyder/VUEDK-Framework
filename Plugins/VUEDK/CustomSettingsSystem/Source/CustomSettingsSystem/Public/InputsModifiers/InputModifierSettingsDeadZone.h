@@ -30,7 +30,14 @@ protected:
 	virtual void OnSettingsApplied() override;
 
 private:
+	/**
+	 * Applies the dead zone to the current value.
+	 * @param CurrentValue The current input value to modify.
+	 */
 	void ApplyDeadZone(FInputActionValue& CurrentValue) const;
-	
+
+	/**
+	 * Sets the threshold value based on the DeadZoneTag.
+	 */
 	void SetTresholdValue();
 };

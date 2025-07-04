@@ -17,6 +17,9 @@ class BETTERUI_API IBetterSettingsPanel
 	GENERATED_BODY()
 
 public:
+	/**
+	 * @brief Resets all settings in the panel to their default values.
+	 */
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void ResetSettingsToDefaults();
 };

@@ -23,8 +23,16 @@ public:
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 
 	virtual void Deinitialize() override;
-	
+
+	/**
+	 * Gets the save manager instance.
+	 * @return Pointer to the USaveManager instance.
+	 */
 	USaveManager* GetSaveManager() const;
 
+	/**
+	 * Gets the auto save manager instance.
+	 * @return Pointer to the UAutoSaveManager instance.
+	 */
 	UAutoSaveManager* GetAutoSaveManager() const;
 };

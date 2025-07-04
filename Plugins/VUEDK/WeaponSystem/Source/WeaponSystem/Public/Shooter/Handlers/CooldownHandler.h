@@ -19,14 +19,31 @@ private:
 public:
 	virtual void Tick(float DeltaTime) override;
 	
+	/**
+	 * Resets the cooldown, making the handler ready for the next action.
+	 */
 	void ResetCooldown();
 
+	/**
+	 * Starts the cooldown process.
+	 */
 	void StartCooldown();
-	
+
+	/**
+	 * Checks if the handler is currently in cooldown.
+	 * @return true if in cooldown, false otherwise.
+	 */
 	bool IsInCooldown() const;
-	
+
 private:
+	/**
+	 * Processes the cooldown logic each frame.
+	 * @param DeltaTime - The time elapsed since the last tick.
+	 */
 	void ProcessCooldown(float DeltaTime);
 
+	/**
+	 * Ends the shoot cooldown and resets the handler state.
+	 */
 	void EndShootCooldown();
 };

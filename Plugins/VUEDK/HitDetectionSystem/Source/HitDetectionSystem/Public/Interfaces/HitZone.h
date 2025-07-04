@@ -18,6 +18,10 @@ class HITDETECTIONSYSTEM_API IHitZone
 	GENERATED_BODY()
 
 public:
+	/**
+	 * Returns the HitZoneHandler associated with this HitZone.
+	 * @return The HitZoneHandler instance.
+	 */
 	UFUNCTION(BlueprintNativeEvent)
 	UHitZoneHandler* GetHitZoneHandler() const;
 };

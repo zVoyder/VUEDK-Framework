@@ -20,10 +20,16 @@ public:
 #endif
 
 protected:
+	/**
+	 * @brief Initializes the input modifier settings. Called before use.
+	 */
 	virtual void Init();
-
+	
 	virtual FInputActionValue ModifyRaw_Implementation(const UEnhancedPlayerInput* PlayerInput, FInputActionValue CurrentValue, float DeltaTime) override;
 
+	/**
+	 * @brief Called when the settings are applied to the input modifier.
+	 */
 	UFUNCTION()
 	virtual void OnSettingsApplied();
 };

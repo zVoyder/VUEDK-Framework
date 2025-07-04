@@ -3,9 +3,9 @@
 #include "RPGInventory/RPGInventoryCompareHandlerSubsystem.h"
 #include "RPGInventory/Utility/RPGInventoriesUtility.h"
 
-void URPGInventoryCompareHandlerSubsystem::Initialize(FSubsystemCollectionBase& Collection)
+void URPGInventoryCompareHandlerSubsystem::PlayerControllerChanged(APlayerController* NewPlayerController)
 {
-	Super::Initialize(Collection);
+	Super::PlayerControllerChanged(NewPlayerController);
 	URPGInventoriesUtility::Init(this);
 }
 

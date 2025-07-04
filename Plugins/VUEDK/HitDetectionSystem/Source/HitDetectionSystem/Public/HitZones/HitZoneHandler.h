@@ -68,16 +68,29 @@ private:
 	UPrimitiveComponent* HitBox;
 
 public:
+	/**
+	 * Initializes the hit zone handler with the specified owner and hit box.
+	 * @param InOwner The actor that owns this hit zone handler.
+	 * @param InHitBox The primitive component representing the hit box.
+	 */
 	void Init(AActor* InOwner, UPrimitiveComponent* InHitBox);
 
 private:
+	/**
+	 * Checks the validity or state of the hit zone handler.
+	 * @return True if valid, false otherwise.
+	 */
 	bool Check() const;
-
+	
 	UFUNCTION()
 	void OnTakePointDamage(AActor* DamagedActor, float Damage, class AController* InstigatedBy, FVector HitLocation, class UPrimitiveComponent* FHitComponent, FName BoneName, FVector ShotFromDirection, const class UDamageType* DamageType, AActor* DamageCauser);
 
 	UFUNCTION()
 	void OnTakeRadialDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType, FVector Origin, const FHitResult& HitInfo, class AController* InstigatedBy, AActor* DamageCauser);
 
+	/**
+	 * Returns the bone name associated with this hit zone.
+	 * @return The bone name as FName.
+	 */
 	FName GetBoneName() const;
 };

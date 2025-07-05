@@ -47,4 +47,4 @@ For detailed documentation of each system, refer to the `README.md` file inside 
 
 ## Known Issues and Credits
 - Some systems may have dependencies on each other: check the specific documentation.
-- Credits: developed by Denis Faraci.
+- Developed by Denis Faraci.

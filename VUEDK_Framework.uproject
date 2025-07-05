@@ -17,6 +17,10 @@
 			"TargetAllowList": [
 				"Editor"
 			]
+		},
+		{
+			"Name": "CommonShaders",
+			"Enabled": true
 		}
 	]
 }

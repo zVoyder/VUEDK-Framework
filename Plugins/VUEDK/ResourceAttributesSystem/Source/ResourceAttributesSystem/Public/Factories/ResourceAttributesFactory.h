@@ -13,6 +13,12 @@ class RESOURCEATTRIBUTESSYSTEM_API UResourceAttributesFactory : public UBlueprin
 	GENERATED_BODY()
 
 public:
+	/**
+	 * Creates a new resource attribute instance using the provided attribute data and manager.
+	 * @param AttributeData The data asset containing the configuration for the resource attribute.
+	 * @param ResourceAttributesManager The manager that will handle this resource attribute.
+	 * @return A new instance of UResourceAttribute initialized with the provided data.
+	 */
 	UFUNCTION(BlueprintCallable, Category = "Resource Attributes", meta = (DefaultToSelf = "Outer", HidePin = "Outer"))
 	static UResourceAttribute* CreateResourceAttribute(UResourceAttributeData* AttributeData, UResourceAttributesManager* ResourceAttributesManager);
 };

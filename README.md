@@ -1,4 +1,4 @@
-﻿# VUEDK Framework
+# VUEDK Framework
 
 ## Description
 VUEDK is a modular framework for Unreal Engine, designed to provide ready-to-use systems that are easy to integrate into your game projects. Each system is contained in its own folder and can be used independently or in combination with others.
@@ -44,6 +44,11 @@ VUEDK is a modular framework for Unreal Engine, designed to provide ready-to-use
 - **VUEDKCore**: Common modules and utilities.
 
 For detailed documentation of each system, refer to the `README.md` file inside the respective plugin folder.
+
+## Example Project
+For a practical demonstration of how to integrate and utilize the VUEDK systems within a game environment, you can refer to the official example project.
+This prototype serves as a reference implementation, showcasing the interaction between various modules in a minimal yet functional game scenario.
+🔗 [VUEDK Example Game – GitHub Repository]([https://github.com/YourUsername/VUEDK-ExampleGame](https://github.com/zVoyder/ProjectEK))
 
 ## Known Issues and Credits
 - Some systems may have dependencies on each other: check the specific documentation.

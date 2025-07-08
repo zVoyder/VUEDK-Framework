@@ -3,6 +3,13 @@
 #include "Montages/Notifies/Base/WeaponNotifyStateBase.h"
 #include "WeaponSystem.h"
 
+UWeaponNotifyStateBase::UWeaponNotifyStateBase()
+{
+#if WITH_EDITORONLY_DATA
+	bShouldFireInEditor = false;
+#endif
+}
+
 void UWeaponNotifyStateBase::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float TotalDuration, const FAnimNotifyEventReference& EventReference)
 {
 	Super::NotifyBegin(MeshComp, Animation, TotalDuration, EventReference);

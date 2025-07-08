@@ -18,6 +18,9 @@ private:
 	UWeaponAnimMetaData* WeaponAnimMetaData = nullptr;
 	bool bIsInitialized = false;
 
+public:
+	UWeaponNotifyStateBase();
+	
 protected:
 	virtual void NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float TotalDuration, const FAnimNotifyEventReference& EventReference) override;
 

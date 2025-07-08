@@ -48,6 +48,7 @@ For detailed documentation of each system, refer to the `README.md` file inside 
 ## Example Project
 For a practical demonstration of how to integrate and utilize the VUEDK systems within a game environment, you can refer to the official example project.
 This prototype serves as a reference implementation, showcasing the interaction between various modules in a minimal yet functional game scenario.
+
 🔗 [VUEDK Example Game – GitHub Repository]([https://github.com/YourUsername/VUEDK-ExampleGame](https://github.com/zVoyder/ProjectEK))
 
 ## Known Issues and Credits

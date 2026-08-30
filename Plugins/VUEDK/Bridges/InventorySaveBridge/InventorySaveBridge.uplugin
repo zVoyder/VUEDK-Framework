@@ -1,0 +1,34 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "InventorySaveBridge",
+	"Description": "Bridges the VUEDK InventorySystem and the VUEDK SaveSystem, enabling inventory persistence without creating direct dependencies.",
+	"Category": "VUEDK.Bridges",
+	"CreatedBy": "Denis Faraci",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "InventorySaveBridge",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"SupportURL": "",
+	"Plugins": [
+		{
+			"Name": "SaveSystem",
+			"Enabled": true
+		},
+		{
+			"Name": "InventorySystem",
+			"Enabled": true
+		}
+	]
+}

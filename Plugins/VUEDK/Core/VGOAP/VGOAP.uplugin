@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "VGOAP",
+	"Description": "VUEDK GOAP",
+	"Category": "VUEDK",
+	"CreatedBy": "Denis Faraci",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "VGOAP",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "VGOAPEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	],
+	"SupportURL": ""
+}

@@ -1,0 +1,30 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "InventorySystem",
+  "Description": "VUEDK InventorySystem",
+  "Category": "VUEDK",
+  "CreatedBy": "Denis Faraci",
+  "CreatedByURL": "",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "InventorySystem",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ],
+  "SupportURL": "",
+  "Plugins": [
+    {
+      "Name": "BetterDragSystem",
+      "Enabled": true
+    }
+  ]
+}

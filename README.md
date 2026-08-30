@@ -17,33 +17,7 @@ VUEDK is a modular framework for Unreal Engine, designed to provide ready-to-use
 - Inside each folder you will find:
   - A `.uplugin` file for plugin configuration
   - `Source/`, `Content/`, `Resources/` folders for code, assets, and resources
-  - A `README.md` file with specific documentation
 - The modularity allows you to include only the systems you need, but be mindful of dependencies between plugins.
-
-## Systems Overview
-- **AISystem**: Simple manager for AI characters and behaviors.
-- **BetterDragSystem**: Enhanced drag & drop for UI objects.
-- **BetterUI**: Advanced and customizable UI components.
-- **CheckpointSystem**: Checkpoint management and game state saving.
-- **CrosshairSystem**: Crosshair management and customization.
-- **CursorHandlerSystem**: Advanced cursor and mouse interaction management.
-- **CustomSettingsSystem**: Custom game and user settings system.
-- **DialogueSystem**: Branching and interactive dialogue management.
-- **DismembererSystem**: Customizable meshes dismemberment system.
-- **FeedbacksComposerSystem**: Centralized feedbacks system.
-- **HitDetectionSystem**: Advanced hit detection system for gameplay mechanics.
-- **InputsGlyphsSystem**: Dynamic input key visualization.
-- **InputsHandlerSystem**: Centralized game input management.
-- **InventorySystem**: Modular and customizable inventory system.
-- **ObjectPool**: Object pooling for performance optimization.
-- **QuestSystem**: Quest, objective, and progress management.
-- **ResourceAttributesSystem**: Resource and attribute management (e.g., health, mana, stamina).
-- **RPGSystem**: RPG components (stats, levels, abilities).
-- **SaveSystem**: Game data save/load system.
-- **WeaponSystem**: Weapon, ammo, and firing mechanics management.
-- **VUEDKCore**: Common modules and utilities.
-
-For detailed documentation of each system, refer to the `README.md` file inside the respective plugin folder.
 
 ## Example Project
 For a practical demonstration of how to integrate and utilize the VUEDK systems within a game environment, you can refer to the official example project.
